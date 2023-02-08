@@ -22,15 +22,15 @@ function App() {
           <Login/>
         </Route>
 
-        <Route path='/login'>
+        <Route exact path='/login'>
           <Redirect to='/'/>
         </Route>
 
-        <Route path='/friends'>
+        <Route exact path='/friends'>
           <FriendsList/>
         </Route>
 
-        <Route path='/friends/add'>
+        <Route exact path='/friends/add'>
           <AddFriend/>
         </Route>
       </Switch>
