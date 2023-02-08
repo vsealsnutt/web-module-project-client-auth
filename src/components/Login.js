@@ -6,8 +6,8 @@ const Login = () => {
     const { push } = useHistory();
 
     const [credentials, setCredentials] = useState({
-        username: '',
-        password: ''
+        username:'',
+        password:''
     });
 
     const handleChange = (e) => {
@@ -16,16 +16,17 @@ const Login = () => {
             [e.target.name]: e.target.value
         })
     };
-    console.log(credentials);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:9000/api/login')
+        axios.post('http://localhost:9000/api/login', credentials)
             .then(res => {
-                localStorage.setItem('token', res.payload);
+                console.log(res);
+            
+                localStorage.setItem('token', res.data.token);
                 push('/friends');
             })
-            .catch(err => console.error(err));
+            .catch(err => console.log(err));
     };
 
     return (
