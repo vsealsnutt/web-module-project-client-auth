@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import axiosWithAuth from '../utils/axiosWithAuth';
+
+import '../../src/App.css';
 
 const Login = () => {
     const { push } = useHistory();
@@ -33,12 +34,12 @@ const Login = () => {
     <div>
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className='login-form'>
                 <label htmlFor='username'>Username:</label>
                 <input id='username' name='username' onChange={handleChange}/>
             </div>
 
-            <div>
+            <div className='login-form'>
                 <label htmlFor='password'>Password:</label>
                 <input type='password' id='password' name='password' onChange={handleChange}/>
             </div>

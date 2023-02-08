@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import axiosWithAuth from '../utils/axiosWithAuth';
+
+import '../../src/App.css';
 
 const AddFriend = () => {
     const { push } = useHistory();
@@ -31,7 +32,7 @@ const AddFriend = () => {
 
     return (
         <div>
-            <h2>Add Friend</h2>
+            <h1>Add Friend</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor='name'>Name:</label>
